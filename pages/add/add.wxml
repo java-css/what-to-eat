@@ -6,7 +6,7 @@
   </van-cell>
   <van-cell border="{{false}}" wx:for="{{obj.children}}">
     <van-icon slot='icon' name="label-o" color='#1AAD19' />
-    <input slot='title' value="{{obj.children[index]}}" maxlength='12' placeholder="请在这里输入..." data-index="{{key}}" bindinput="formInputChange" />
+    <input slot='title' value="{{obj.children[index]}}" maxlength='12' placeholder="请在这里输入..." data-pos="{{index}}" bindinput="formInputChange" />
   </van-cell>
   <van-button color='#1AAD19' plain block bindtap="save">
     保 存

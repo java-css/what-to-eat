@@ -7,7 +7,7 @@ Page({
    */
   data: {
     id: null,
-    obj: null
+    obj: {}
   },
 
   /**
@@ -40,17 +40,22 @@ Page({
    */
   onUnload() {},
   formInputChange(e) {
-    console.log(666666,e);
+    console.log(666666, e);
     const {
-      index
+      pos
     } = e.currentTarget.dataset;
-
+    const temp = this.data.obj.children;
+    temp[pos] = e.detail.value;
     this.setData({
-      [`obj.children.${index}`]: e.detail.value,
+      // [`obj.children.${pos}`]: e.detail.value,
+      [`obj.children`]: temp
     });
   },
-  save:function(e){
-    console.log(5555555,this.data.obj);
+  save: function (e) {
+    const {
+      typeName,
+      children
+    } = this.data.obj;
   }
 
 
