@@ -1,0 +1,7 @@
+<!--pages/add/add.wxml-->
+<view class="container">
+  <van-cell clickable border="{{false}}">
+    <van-icon slot='icon' name="label-o" color='#1AAD19' />
+    <input slot='title' maxlength='12' placeholder="请在这里输入..." />
+  </van-cell>
+</view>

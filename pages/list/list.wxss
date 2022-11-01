@@ -1,0 +1,33 @@
+/* pages/list/list.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.cell {
+  border: 2rpx solid #EBEDF0;
+  margin: 4rpx 0;
+}
+
+.mini-btn {
+  margin-top: 50rpx;
+}
+
+.tips {
+  text-align: center;
+  padding-top: 50rpx;
+  color: #1AAD19;
+}
+
+.btns {
+  display: flex;
+  width: 100%;
+}
+.btns>span{
+  flex: 1;
+  text-align: center;
+  border-left: 1rpx solid #000;
+  border-right: 1rpx solid #000;
+}

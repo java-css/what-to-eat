@@ -1,0 +1,7 @@
+/* pages/add/add.wxss */
+.container{
+  padding: 0 20rpx;
+}
+.cell_class{
+ background: red;
+}
