@@ -7,7 +7,7 @@ Page({
    */
   data: {
     id: null,
-    obj:null
+    obj: null
   },
 
   /**
@@ -23,49 +23,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
-
-  },
+  onReady() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-
-  },
+  onShow() {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide() {
-
-  },
+  onHide() {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {
+  onUnload() {},
+  formInputChange(e) {
+    console.log(666666,e);
+    const {
+      index
+    } = e.currentTarget.dataset;
 
+    this.setData({
+      [`obj.children.${index}`]: e.detail.value,
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  save:function(e){
+    console.log(5555555,this.data.obj);
   }
+
+
 })

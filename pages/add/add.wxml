@@ -1,7 +1,14 @@
 <!--pages/add/add.wxml-->
 <view class="container">
-  <van-cell clickable border="{{false}}">
+  <van-cell border="{{false}}">
     <van-icon slot='icon' name="label-o" color='#1AAD19' />
-    <input slot='title' maxlength='12' placeholder="请在这里输入..." />
+    <input slot='title' value="{{obj.typeName}}" maxlength='12' placeholder="请在这里输入..." />
   </van-cell>
+  <van-cell border="{{false}}" wx:for="{{obj.children}}">
+    <van-icon slot='icon' name="label-o" color='#1AAD19' />
+    <input slot='title' value="{{obj.children[index]}}" maxlength='12' placeholder="请在这里输入..." data-index="{{key}}" bindinput="formInputChange" />
+  </van-cell>
+  <van-button color='#1AAD19' plain block bindtap="save">
+    保 存
+  </van-button>
 </view>
