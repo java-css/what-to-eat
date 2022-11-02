@@ -35,7 +35,7 @@ Page({
     this.setEat(this.data.eatList);
   },
   randomIndex: function (num) {
-    return Math.ceil(Math.random() * num);
+    return Math.floor(Math.random() * num)
   },
   randomItem: function () {
     tempMenu
