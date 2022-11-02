@@ -15,19 +15,16 @@ Page({
   data: {
     type: 1,
     id: null,
-    name: null,
-    list: [],
+    obj: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    const obj = app.getMenu().find((item) => item.id === options.id);
     this.setData({
       id: options.id,
-      name: obj.typeName,
-      list: obj.children,
+      obj: app.getMenu().find((item) => item.id === options.id)
     });
   },
 
@@ -51,17 +48,23 @@ Page({
    */
   onUnload() {},
   formInputChange(e) {
-    console.log(666666, e);
-    const { pos } = e.currentTarget.dataset;
+    const {
+      pos
+    } = e.currentTarget.dataset;
     const temp = this.data.obj.children;
     temp[pos] = e.detail.value;
+    console.log(555555555555555,temp);
     this.setData({
       // [`obj.children.${pos}`]: e.detail.value,
       [`obj.children`]: temp,
     });
   },
   save: function (e) {
-    const { obj, id } = this.data;
+    const {
+      obj,
+      id,
+      type
+    } = this.data;
     let list = app.getMenu();
     if (type === 1) {
       //编辑

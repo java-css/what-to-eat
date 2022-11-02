@@ -99,7 +99,7 @@ Page({
     });
   },
   onHide() {
-   app.setMenu(this.data.list);
+    app.setMenu(this.data.list);
   },
   onUnload() {},
   onPullDownRefresh() {},
@@ -168,7 +168,7 @@ Page({
       id,
     } = e.currentTarget.dataset;
     wx.navigateTo({
-      url: `/pages/add/add?id=${id}`,
+      url: `/pages/add/add?id=${id}&type=1`,
     })
   },
   getItem: function (e) {
