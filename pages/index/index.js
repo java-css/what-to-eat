@@ -4,29 +4,38 @@ const app = getApp();
 let timer = null;
 Page({
   data: {
-    weekList: ['一', '二', '三', '四', '五'],
     btnName: '开始',
     current: '',
     list: [],
     eatList: {},
     currentId: null,
-    tempMenu: [
-
-    ]
+    tempMenu: [],
+    title: ''
   },
 
   onLoad() {
 
   },
   onShow() {
+    const list = app.getMenu();
+    const arr = list.length ? list : app.globalData.list;
+    const rand = this.randomIndex(arr.length);
+    const obj = arr[rand];
+    const {
+      typeName,
+      children
+    } = obj;
     this.setData({
-      list: app.getMenu(),
-      eatList: this.getEat()
+      title: typeName,
+      list: children
     });
   },
   onHide() {
     this.end(true);
     this.setEat(this.data.eatList);
+  },
+  randomIndex: function (num) {
+    return Math.ceil(Math.random() * num);
   },
   randomItem: function () {
     tempMenu

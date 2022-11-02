@@ -1,7 +1,8 @@
 /* pages/add/add.wxss */
-.container{
-  padding: 0 20rpx;
+.container {
+  /* padding: 0 20rpx; */
 }
-.cell_class{
- background: red;
+
+.left_padding {
+  padding-left: 20px;
 }

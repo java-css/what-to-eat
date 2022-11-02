@@ -1,20 +1,9 @@
 <!--pages/list/list.wxml-->
-<!-- <view class="container">
-  <mp-slideview wx:for="{{arr}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-value="{{item}}" data-idx="{{index}}">
-    <mp-cell ext-class='cell' value="{{item}}"></mp-cell>
-  </mp-slideview>
-  <view wx:if="{{!arr.length}}" class="tips">请点击“新增”按钮输入你喜欢或会做的菜名</view>
-  <button class="mini-btn" type="default" size="mini" bindtap="add">新 增</button>
-  <mp-half-screen-dialog bindbuttontap="buttontap" show="{{show}}" closabled="{{false}}" title='输入'>
-    <input slot='desc' maxlength='12' cursor-spacing='25' value="{{value}}" bindinput="input" bindblur='blur' bindconfirm='confirm' placeholder="请在这里输入..." />
-  </mp-half-screen-dialog>
-</view> -->
 <view class="container">
   <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
     <van-collapse-item wx:for="{{list}}" wx:for-index="id" title="{{item.typeName}}" name="{{item.id}}">
       <view class="btns">
         <span wx:for="{{btns}}" wx:for-item="btn" data-item="{{item}}" data-id="{{item.id}}" bindtap="{{btn.handler}}">{{btn.name}}</span>
-
       </view>
     </van-collapse-item>
   </van-collapse>

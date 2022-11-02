@@ -1,21 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <view class="daily">
-    <view class="daily_item {{currentId == index ? 'active':''}}" wx:for="{{weekList}}" wx:key="item" bindtap="currentHandler" data-id="{{index}}">
-      <block>
-        <span class="week">周{{item}}</span>
-        <span class="eat">{{eatList[index]||'(空)'}}</span>
-      </block>
-    </view>
+  <view class="title">
+    {{title}}
   </view>
-  <button class="clear" type="primary" size="mini" bindtap="clear">清 空</button>
-  <view class="line"></view> -->
   <view class="select">
     <view class="box">
       <view class="place"> {{current}}</view>
     </view>
     <view class="btns">
-      <!-- <button class="mini_btn" type="default" size="mini">清空</button> -->
       <button class="mini_btn" type="primary" size="mini" data-status="{{btnName}}" bindtap="startOrEnd">{{btnName}}</button>
     </view>
   </view>

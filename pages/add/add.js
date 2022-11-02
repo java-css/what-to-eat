@@ -13,19 +13,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: 1,
     id: null,
-    obj: null
+    name: '',
+    list: [],
+    type: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(5555555555, options);
+    const {
+      id,
+      type
+    } = options;
+    if (type == 1) {
+      const obj = app.getMenu().find((item) => item.id === options.id);
+      console.log(666666666, obj);
+      const {
+        typeName,
+        children
+      } = obj;
+      this.setData({
+        id: id,
+        name: typeName,
+        list: children
+      });
+    }
     this.setData({
-      id: options.id,
-      obj: app.getMenu().find((item) => item.id === options.id)
-    });
+      type: type
+    })
   },
 
   /**
@@ -47,29 +65,74 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {},
+  inputName: function (e) {
+    this.setData({
+      name: e.detail.value
+    });
+  },
   formInputChange(e) {
     const {
       pos
     } = e.currentTarget.dataset;
-    const temp = this.data.obj.children;
-    temp[pos] = e.detail.value;
-    console.log(555555555555555,temp);
+    // const temp = this.data.list;
+    // temp[pos] = e.detail.value;
     this.setData({
       // [`obj.children.${pos}`]: e.detail.value,
-      [`obj.children`]: temp,
+      ['list[' + pos + ']']: e.detail.value
+      // list: temp,
     });
   },
   save: function (e) {
     const {
-      obj,
+      name,
       id,
-      type
+      type,
+      list
     } = this.data;
-    let list = app.getMenu();
-    if (type === 1) {
-      //编辑
-    } else {
-      //新增
+    let arr = app.getMenu();
+    if (this.verify()) {
+      if (type == '1') {
+        //编辑
+        arr.map(item => item.id === id && (item.typeName = name, item.children = list));
+  
+      } else {
+        //新增
+        arr.push({
+          id: app.random(),
+          typeName: name,
+          children: list
+        });
+       
+      }
+      app.setMenu(arr);
     }
   },
+  verify: function (e) {
+    const {
+      name,
+      list
+    } = this.data;
+    const empty = list.find(r => r === '') === '';
+    if (!name) return app.showToast('名称不能为空');
+    if (empty) return app.showToast('选项不能为空');
+    if (list.length < 2) return app.showToast('至少添加两个选项');
+    return true;
+  },
+  del: function (e) {
+    const {
+      pos
+    } = e.currentTarget.dataset;
+    const arr = this.data.list;
+    arr.splice(pos, 1);
+    this.setData({
+      list: arr
+    })
+  },
+  add: function (e) {
+    const arr = this.data.list;
+    arr.push('');
+    this.setData({
+      list: arr
+    })
+  }
 });
