@@ -16,20 +16,6 @@ Page({
    */
   data: {
     list: [],
-    btns: [
-      {
-        name: "随 机",
-        handler: "getItem",
-      },
-      {
-        name: "编 辑",
-        handler: "edit",
-      },
-      {
-        name: "删 除",
-        handler: "del",
-      },
-    ],
   },
 
   onLoad(options) {},

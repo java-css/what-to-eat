@@ -1,15 +1,15 @@
 <!--pages/add/add.wxml-->
 <view class="container">
-  <van-cell border="{{false}}">
-    <van-icon slot='icon' name="star-o" color='#1AAD19' />
-    <input class="left_padding" slot='title' value="{{name}}" maxlength='12' placeholder="名称 | 12个字符" bindinput="inputName" />
+  <van-cell border="{{false}}" custom-class='user_cell'>
+    <van-icon slot='icon' name="star-o" color='#1AAD19' size='36rpx'/>
+    <input class="left_padding" slot='title' value="{{name}}" maxlength='12' placeholder="名称 ~ 12个字符" bindinput="inputName" />
   </van-cell>
-  <van-cell border="{{false}}" wx:for="{{list}}">
-    <van-icon slot='icon' name="close" color='#1AAD19' data-pos="{{index}}" bindtap="del" />
-    <input class="left_padding" slot='title' value="{{list[index]}}" maxlength='12' placeholder="选项 | 12个字符" data-pos="{{index}}" bindinput="formInputChange" />
+  <van-cell border="{{false}}" wx:for="{{list}}" custom-class='user_cell'>
+    <van-icon slot='icon' name="close" color='#1AAD19' size='36rpx' data-pos="{{index}}" bindtap="del" />
+    <input class="left_padding" slot='title' value="{{list[index]}}" maxlength='12' placeholder="选项 ~ 12个字符" data-pos="{{index}}" bindinput="formInputChange" />
   </van-cell>
-  <van-cell border="{{false}}" bindtap="add">
-    <van-icon slot='icon' name="add-o" color='#1AAD19' />
+  <van-cell border="{{false}}" bindtap="add" custom-class='user_cell'>
+    <van-icon slot='icon' name="add-o" color='#1AAD19' size='36rpx'/>
     <view class="left_padding" slot='title'>
       增加选项
     </view>

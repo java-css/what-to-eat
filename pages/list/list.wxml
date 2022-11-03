@@ -3,9 +3,11 @@
   <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
     <van-collapse-item wx:for="{{list}}" wx:for-index="id" title="{{item.typeName}}" name="{{item.id}}">
       <view class="btns">
-        <block wx:for="{{btns}}" wx:for-item="btn">
-          <span data-pos="{{index}}" data-id="{{item.id}}" bindtap="{{btn.handler}}">{{btn.name}}</span>
-        </block>
+        <span data-id="{{item.id}}" bindtap="getItem"><van-icon name="smile-o" />随 机</span>
+        <span data-id="{{item.id}}" bindtap="edit"><van-icon name="edit" />编 辑</span>
+        <span wx:if="{{!item.noDel}}" data-pos="{{index}}" bindtap="del">
+          <van-icon name="close" />删 除
+        </span>
       </view>
     </van-collapse-item>
   </van-collapse>

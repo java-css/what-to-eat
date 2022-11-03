@@ -1,8 +1,18 @@
 /* pages/add/add.wxss */
-.container {
-  /* padding: 0 20rpx; */
+page{
+  --cell-vertical-padding:36rpx;
 }
-
+.container {
+  margin: 0 20rpx;
+}
+.user_cell{
+  background: #eee !important;
+  margin-bottom: 16rpx;
+  border-radius: 10rpx;
+}
 .left_padding {
   padding-left: 20px;
+}
+input{
+  font-size: 32rpx;
 }

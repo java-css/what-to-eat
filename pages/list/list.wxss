@@ -1,9 +1,12 @@
 /* pages/list/list.wxss */
+page {
+  --cell-vertical-padding: 36rpx;
+  --collapse-item-content-padding: 0;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .cell {
@@ -24,10 +27,13 @@
 .btns {
   display: flex;
   width: 100%;
+  border-collapse:collapse;
 }
-.btns>span{
+
+.btns>span {
   flex: 1;
   text-align: center;
-  border-left: 1rpx solid #000;
-  border-right: 1rpx solid #000;
+  padding: 30rpx 0;
+  border-left: 1rpx solid #ddd;
+  border-right: 1rpx solid #ddd;
 }
