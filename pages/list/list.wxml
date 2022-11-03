@@ -3,7 +3,7 @@
   <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
     <van-collapse-item wx:for="{{list}}" wx:for-index="id" title="{{item.typeName}}" name="{{item.id}}">
       <view class="btns">
-        <span wx:for="{{btns}}" wx:for-item="btn" data-item="{{item}}" data-id="{{item.id}}" bindtap="{{btn.handler}}">{{btn.name}}</span>
+        <span wx:for="{{btns}}" wx:for-item="btn" data-pos="{{index}}" data-id="{{item.id}}" bindtap="{{btn.handler}}">{{btn.name}}</span>
       </view>
     </van-collapse-item>
   </van-collapse>

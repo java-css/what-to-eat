@@ -1,23 +1,35 @@
+/*
+ * @Author: Jason Jason
+ * @Date: 2022-10-25 14:23:03
+ * @LastEditors: Jason Jason
+ * @LastEditTime: 2022-11-03 09:32:14
+ * @FilePath: \what-to-eat\pages\list\list.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 // pages/list/list.js
-const app = getApp()
+const app = getApp();
 let temp = null;
-let isEdit = false
+let isEdit = false;
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     list: [],
-    btns: [{
-      name: '随 机',
-      handler: 'getItem'
-    }, {
-      name: '编 辑',
-      handler: 'edit'
-    }, {
-      name: '删 除',
-      handler: 'del'
-    }]
+    btns: [
+      {
+        name: "随 机",
+        handler: "getItem",
+      },
+      {
+        name: "编 辑",
+        handler: "edit",
+      },
+      {
+        name: "删 除",
+        handler: "del",
+      },
+    ],
   },
 
   onLoad(options) {},
@@ -38,7 +50,7 @@ Page({
   add: function (e) {
     wx.navigateTo({
       url: `/pages/add/add?type=0`,
-    })
+    });
   },
   onChange(event) {
     this.setData({
@@ -46,25 +58,25 @@ Page({
     });
   },
   edit: function (e) {
-    const {
-      id,
-    } = e.currentTarget.dataset;
+    const { id } = e.currentTarget.dataset;
     wx.navigateTo({
       url: `/pages/add/add?id=${id}&type=1`,
-    })
+    });
   },
   getItem: function (e) {
-    const {
-      id
-    } = e.currentTarget.dataset;
+    const { id } = e.currentTarget.dataset;
     app.globalData.idClassidy = id;
     wx.switchTab({
       url: "/pages/index/index",
-    })
+    });
   },
   del: function (e) {
-    const {
-      id
-    } = e.currentTarget.dataset;
-  }
-})
+    const { pos } = e.currentTarget.dataset;
+    const arr = this.data.list;
+    arr.splice(pos, 1);
+    this.setData({
+      list: arr,
+    });
+    app.setMenu(arr);
+  },
+});
