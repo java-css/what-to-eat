@@ -24,7 +24,7 @@ App({
         "炒面",
         '米线'
       ],
-      canDel: false,
+      noDel: true,
     }, {
       id: 'xxxxx02',
       typeName: '晚饭吃什么?',
@@ -47,7 +47,7 @@ App({
         "炒面",
         '米线'
       ],
-      canDel: false,
+      noDel: true,
     }, {
       id: 'xxxxx03',
       typeName: '聚餐吃什么?',
@@ -61,7 +61,7 @@ App({
         "本地特色菜",
         '早茶'
       ],
-      canDel: false,
+      noDel: true,
     }],
   },
   onLaunch() {
