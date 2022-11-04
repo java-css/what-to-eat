@@ -15,13 +15,13 @@
         "pagePath": "pages/index/index",
         "iconPath": "image/calendar.png",
         "selectedIconPath": "image/calendar_active.png",
-        "text": "计 划"
+        "text": "随 机"
       },
       {
         "pagePath": "pages/list/list",
         "iconPath": "image/edit.png",
         "selectedIconPath": "image/edit_active.png",
-        "text": "新 增"
+        "text": "列 表"
       }
     ]
   },

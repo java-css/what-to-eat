@@ -14,7 +14,7 @@
       增加选项
     </view>
   </van-cell>
-  <van-button color='#1AAD19' plain block bindtap="save">
+  <van-button color='#1AAD19' loading="{{loading}}" plain block bindtap="save">
     保 存
   </van-button>
 </view>

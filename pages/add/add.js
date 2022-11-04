@@ -16,21 +16,18 @@ Page({
     id: null,
     name: '',
     list: [],
-    type: null
+    loading: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(5555555555, options);
     const {
-      id,
-      type
+      id
     } = options;
-    if (type == 1) {
+    if (id) {
       const obj = app.getMenu().find((item) => item.id === options.id);
-      console.log(666666666, obj);
       const {
         typeName,
         children
@@ -42,7 +39,7 @@ Page({
       });
     }
     this.setData({
-      type: type
+      id: id ? id : app.random()
     })
   },
 
@@ -86,25 +83,39 @@ Page({
     const {
       name,
       id,
-      type,
       list
     } = this.data;
     let arr = app.getMenu();
     if (this.verify()) {
-      if (type == '1') {
-        //编辑
+      this.setData({
+        loading: true
+      })
+      const idx = arr.find(item => item.id === id);
+      if (idx) {
         arr.map(item => item.id === id && (item.typeName = name, item.children = list));
-  
       } else {
-        //新增
         arr.push({
-          id: app.random(),
+          id: id,
           typeName: name,
           children: list
         });
-       
       }
+      // if (type == '1') {
+      //   //编辑
+      //   arr.map(item => item.id === id && (item.typeName = name, item.children = list));
+      // } else {
+      //   //新增
+      //   arr.push({
+      //     id: app.random(),
+      //     typeName: name,
+      //     children: list
+      //   });
+      // }
       app.setMenu(arr);
+      app.showToast('保存成功', 'success')
+      this.setData({
+        loading: false
+      })
     }
   },
   verify: function (e) {

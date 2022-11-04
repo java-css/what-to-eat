@@ -1,10 +1,14 @@
 <!--pages/list/list.wxml-->
 <view class="container">
-  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
-    <van-collapse-item wx:for="{{list}}" wx:for-index="id" title="{{item.typeName}}" name="{{item.id}}">
+  <van-collapse accordion border="{{false}}" value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item wx:for="{{list}}" wx:for-index="id" title="{{item.typeName}}" custom-class='user_class' name="{{item.id}}">
       <view class="btns">
-        <span data-id="{{item.id}}" bindtap="getItem"><van-icon name="smile-o" />随 机</span>
-        <span data-id="{{item.id}}" bindtap="edit"><van-icon name="edit" />编 辑</span>
+        <span data-id="{{item.id}}" bindtap="getItem">
+          <van-icon name="smile-o" />随 机
+        </span>
+        <span data-id="{{item.id}}" bindtap="edit">
+          <van-icon name="edit" />编 辑
+        </span>
         <span wx:if="{{!item.noDel}}" data-pos="{{index}}" bindtap="del">
           <van-icon name="close" />删 除
         </span>

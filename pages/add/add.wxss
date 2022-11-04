@@ -1,18 +1,40 @@
 /* pages/add/add.wxss */
-page{
-  --cell-vertical-padding:36rpx;
+page {
+  --cell-vertical-padding: 36rpx;
 }
+
 .container {
   margin: 0 20rpx;
 }
-.user_cell{
+
+.user_cell {
   background: #eee !important;
   margin-bottom: 16rpx;
   border-radius: 10rpx;
 }
+
 .left_padding {
   padding-left: 20px;
 }
-input{
+
+input {
   font-size: 32rpx;
+}
+
+.van-icon-close {
+  animation: rotate90 0.5s;
+}
+
+.van-icon-close:active {
+  animation: none;
+}
+
+@keyframes rotate90 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
 }

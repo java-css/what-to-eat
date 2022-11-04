@@ -7,10 +7,11 @@ page {
 .container {
   display: flex;
   flex-direction: column;
+  margin: 0 20rpx;
 }
 
 .cell {
-  border: 2rpx solid #EBEDF0;
+  /* border: 2rpx solid #EBEDF0; */
   margin: 4rpx 0;
 }
 
@@ -27,13 +28,22 @@ page {
 .btns {
   display: flex;
   width: 100%;
-  border-collapse:collapse;
+  border-collapse: collapse;
 }
 
 .btns>span {
   flex: 1;
   text-align: center;
   padding: 30rpx 0;
-  border-left: 1rpx solid #ddd;
-  border-right: 1rpx solid #ddd;
+  border-left: 1rpx solid #ebedf0;
+  border-right: 1rpx solid #ebedf0;
+}
+.van-collapse{
+  border-collapse: collapse;
+}
+.user_class {
+  border-collapse: collapse;
+  border: 1rpx solid #ebedf0;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
 }
