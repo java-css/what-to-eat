@@ -106,10 +106,10 @@ App({
       if (!menus) menus = [];
       menus.push(m);
     }
-    wx.setStorageSync("menu", menus);
+    wx.setStorageSync("menuList", menus);
   },
   getMenu: function () {
-    return wx.getStorageSync("menu");
+    return wx.getStorageSync("menuList");
   },
   random: function () {
     return Math.random().toString(36).substr(2);
