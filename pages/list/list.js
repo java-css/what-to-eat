@@ -35,7 +35,7 @@ Page({
   onShareAppMessage() {},
   add: function (e) {
     wx.navigateTo({
-      url: `/pages/add/add?type=0`,
+      url: `/pages/add/add`,
     });
   },
   onChange(event) {
@@ -46,7 +46,7 @@ Page({
   edit: function (e) {
     const { id } = e.currentTarget.dataset;
     wx.navigateTo({
-      url: `/pages/add/add?id=${id}&type=1`,
+      url: `/pages/add/add?id=${id}`,
     });
   },
   getItem: function (e) {

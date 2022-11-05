@@ -1,14 +1,17 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="title">
-    {{title}}
+  <view class="content">
+    <image src="../../image/icon.png" />
+    <view class="title">
+      {{title}}
+    </view>
   </view>
-  <!-- <view class="select">
+  <view class="select">
     <view class="box">
       <view class="place"> {{current}}</view>
     </view>
     <view class="btns">
       <button class="mini_btn" type="primary" size="mini" data-status="{{btnName}}" bindtap="startOrEnd">{{btnName}}</button>
     </view>
-  </view> -->
+  </view>
 </view>

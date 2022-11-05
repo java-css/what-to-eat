@@ -4,7 +4,9 @@ page {
 }
 
 .container {
+  overflow-y: scroll;
   margin: 0 20rpx;
+  padding: 30rpx 0;
 }
 
 .user_cell {

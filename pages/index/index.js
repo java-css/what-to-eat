@@ -4,7 +4,7 @@ const app = getApp();
 let timer = null;
 Page({
   data: {
-    btnName: "开始",
+    btnName: "开 始",
     current: "",
     list: [],
     eatList: {},
@@ -70,7 +70,7 @@ Page({
       });
     }
     this.setData({
-      btnName: "开始",
+      btnName: "开 始",
     });
   },
   randomSort: function (a, b) {
@@ -86,7 +86,7 @@ Page({
       });
       return false;
     }
-    if (type == "开始") {
+    if (type == "开 始") {
       this.randomItem();
     } else {
       this.end();

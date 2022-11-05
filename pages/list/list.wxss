@@ -38,6 +38,9 @@ page {
   border-left: 1rpx solid #ebedf0;
   border-right: 1rpx solid #ebedf0;
 }
+.pd{
+  padding: 0 8rpx;
+}
 .van-collapse{
   border-collapse: collapse;
 }

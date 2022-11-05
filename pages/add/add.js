@@ -116,6 +116,10 @@ Page({
       this.setData({
         loading: false
       })
+      app.globalData.idClassidy = id;
+      wx.switchTab({
+        url: "/pages/index/index",
+      });
     }
   },
   verify: function (e) {
